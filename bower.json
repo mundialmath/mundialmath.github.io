@@ -1,0 +1,9 @@
+{
+    "name": "awesome-project",
+    "description": "A project to listen music in the browser.",
+    "version": "0.0.0",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+    }
+}
