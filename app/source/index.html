@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="musicApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="musicApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="musicApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="musicApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="mundialMath" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="mundialMath" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="mundialMath" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="mundialMath" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My first App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My first App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <div ng-view></div>
+
+    <script src="app.js"></script>
+    <script src="startPage/startPage.js"></script>
+    <script src="resources/mundialApi.js"></script>
+    <script src="directives/directives.js"></script>
+
+    <script src="directives/dinamicTable/dinamicTable.js"></script>
+    <script src="directives/usersRanking/usersRanking.js"></script>
+
 </body>
 </html>

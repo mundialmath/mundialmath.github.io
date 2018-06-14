@@ -21,5 +21,7 @@
     "postupdate-deps": "bower update",
     "prestart": "npm install",
     "start": "gulp"
+  },
+  "dependencies": {
   }
 }
