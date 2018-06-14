@@ -1,5 +1,5 @@
 angular.module('mundialMath.resources', [])
-    .factory('mundialApi',  ['$http',  function($http){
+    .factory('userApi',  ['$http',  function($http){
         let baseUrl = 'http://127.0.0.1:5000';
         return {
             getUsers: function(){
@@ -19,6 +19,19 @@ angular.module('mundialMath.resources', [])
                 //     ]
                 // }
             },
+
+            enviarOdds: function(odds){
+                $http({
+                    url: baseUrl+'/users/'+odds['usuario']+'/',
+                    method: 'POST',
+                    params: odds,
+                    crossDomain: true
+                })
+            }
+        }
+    }])
+    .factory('userInputApi',  ['$http',  function($http){
+        return {
             getInputs: function(userName){
                 return  $http({
                     url: baseUrl+'/users/'+userName,
@@ -35,7 +48,12 @@ angular.module('mundialMath.resources', [])
                 //         ['Camilo', 4]
                 //     ]
                 // }
-            },
+            }
+        }
+    }
+    ])
+    .factory('partidosApi',  ['$http',  function($http){
+        return {
             getPartidos: function(){
                 return  $http({
                     url: baseUrl+'/partidos',
@@ -56,15 +74,6 @@ angular.module('mundialMath.resources', [])
                 //         ['ddfda3', 4, 5]
                 //     ]
                 // }
-            },
-
-            enviarOdds: function(odds){
-                $http({
-                    url: baseUrl+'/users/'+odds['usuario']+'/',
-                    method: 'POST',
-                    params: odds,
-                    crossDomain: true
-                })
             }
         }
     }
