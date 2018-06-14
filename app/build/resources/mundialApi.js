@@ -1,9 +1,10 @@
 angular.module('mundialMath.resources', [])
     .factory('mundialApi',  ['$http',  function($http){
+        var baseUrl = 'http://127.0.0.1:5000';
         return {
             getUsers: function(){
                 return  $http({
-                    url: 'http://127.0.0.1:5000/users/score',
+                    url: baseUrl+'/users/score',
                     method: 'GET',
                     withCredentials: false,
                     crossDomain:true,
@@ -18,10 +19,43 @@ angular.module('mundialMath.resources', [])
                 //     ]
                 // }
             },
-
+            getInputs: function(userName){
+                return  $http({
+                    url: baseUrl+'/users/'+userName,
+                    method: 'GET',
+                    withCredentials: false,
+                    crossDomain: true,
+                    eventHandlers: {
+                    }
+                });
+                // return {
+                //     columns: ['Nombre', 'Telefono'],
+                //     data: [
+                //         ['Juan', 3],
+                //         ['Camilo', 4]
+                //     ]
+                // }
+            },
+            getInputsWizard: function(partido){
+                return  $http({
+                    url: baseUrl+'/wizard/'+partido,
+                    method: 'GET',
+                    withCredentials: false,
+                    crossDomain: true,
+                    eventHandlers: {
+                    }
+                });
+                // return {
+                //     columns: ['Nombre', 'Telefono'],
+                //     data: [
+                //         ['Juan', 3],
+                //         ['Camilo', 4]
+                //     ]
+                // }
+            },
             getPartidos: function(){
                 return  $http({
-                    url: 'http://127.0.0.1:5000/partidos',
+                    url: baseUrl+'/partidos',
                     method: 'GET',
                     withCredentials: false,
                     crossDomain:true,
@@ -43,7 +77,7 @@ angular.module('mundialMath.resources', [])
 
             enviarOdds: function(odds){
                 $http({
-                    url: 'http://127.0.0.1:5000/users/sebas',
+                    url: baseUrl+'/users/'+odds['usuario'],
                     method: 'POST',
                     params: odds,
                     crossDomain: true

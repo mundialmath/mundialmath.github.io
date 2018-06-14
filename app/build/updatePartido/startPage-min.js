@@ -1,1 +1,0 @@
-"use strict";angular.module("mundialMath.startPage",["ngRoute"]).config(["$routeProvider",function(t){t.when("/start",{templateUrl:"startPage/startPage.html"})}]).controller("startPageCtrl",["mundialApi","$scope","$timeout",function(t,a,e){a.tablaUsuarios=t.getUsers(),a.tablaPartidos=t.getPartidos()}]);

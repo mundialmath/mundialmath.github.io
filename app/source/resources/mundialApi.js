@@ -36,6 +36,23 @@ angular.module('mundialMath.resources', [])
                 //     ]
                 // }
             },
+            getInputsWizard: function(partido){
+                return  $http({
+                    url: baseUrl+'/wizard/'+partido,
+                    method: 'GET',
+                    withCredentials: false,
+                    crossDomain: true,
+                    eventHandlers: {
+                    }
+                });
+                // return {
+                //     columns: ['Nombre', 'Telefono'],
+                //     data: [
+                //         ['Juan', 3],
+                //         ['Camilo', 4]
+                //     ]
+                // }
+            },
             getPartidos: function(){
                 return  $http({
                     url: baseUrl+'/partidos',
@@ -60,7 +77,7 @@ angular.module('mundialMath.resources', [])
 
             enviarOdds: function(odds){
                 $http({
-                    url: baseUrl+'/users/'+odds['usuario']+'/',
+                    url: baseUrl+'/users/'+odds['usuario'],
                     method: 'POST',
                     params: odds,
                     crossDomain: true

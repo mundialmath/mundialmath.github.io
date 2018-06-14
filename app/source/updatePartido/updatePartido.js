@@ -10,6 +10,7 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
         function($mundialApi, $scope, $timeout) {
             $scope.tablaUsuarios = null;
             $scope.tablaPartidos = null;
+            $scope.tablaInputsWizard = null;
 
             $scope.selectedTeam = {
                 usuario: null,
@@ -29,6 +30,14 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
                         console.log(response);
                     });
             };
+            $scope.getInputsWizard = function(){
+                $mundialApi.getInputsWizard($scope.selectedTeam.partido)
+                    .then(function (response) {
+                        $scope.tablaInputsWizard = response.data
+                    }, function(response) {
+                        console.log(response);
+                    });
+            };
 
             $scope.getUsers = function(){
                 $mundialApi.getUsers()
@@ -42,9 +51,10 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
 
             (function init(){
                 $scope.getPartidos();
-                $scope.getUsers()
+                $scope.getUsers();
+                $scope.getInputsWizard();
             })();
 
-            $scope.enviarOdds = function() {$mundialApi.enviarOdds($scope.selectedTeam);};
+            $scope.enviarOdds = function() {$scope.getInputsWizard(); $mundialApi.enviarOdds($scope.selectedTeam);};
         }]
     );

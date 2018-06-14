@@ -6,8 +6,8 @@
         </select>
     </div>
     <div>
-        <select ng-model="selectedTeam.partido">
-            <option ng-repeat="a in tablaPartidos.data">{{ a[1] }} - {{ a[2] }}</option>
+        <select ng-model="selectedTeam.partido" ng-change="getInputsWizard()">
+            <option ng-value="a[0]" ng-repeat="a in tablaPartidos.data">{{ a[1] }} - {{ a[2] }}</option>
         </select>
     </div>
     <div>
@@ -16,4 +16,7 @@
         <label>2</label><input type="number" name="input {{ a[2] }}" ng-model="selectedTeam.resultados[2]"><br>
     </div>
     <button ng-click="enviarOdds()">Enviar</button>
+
+    <br>
+    <dinamic-table table=tablaInputsWizard></dinamic-table>
 </div>
