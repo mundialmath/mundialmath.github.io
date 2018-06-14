@@ -5,11 +5,35 @@ angular.module('mundialMath.startPage', ['ngRoute'])
         $routeProvider.when('/start', {
             templateUrl: 'startPage/startPage.html'
         });
-
     }])
     .controller('startPageCtrl', ['mundialApi', '$scope', '$timeout',
         function($mundialApi, $scope, $timeout) {
-            $scope.tablaUsuarios = $mundialApi.getUsers();
-            $scope.tablaPartidos = $mundialApi.getPartidos();
+            $scope.tablaUsuarios = null;
+            $scope.tablaPartidos = null;
+
+            $scope.getPartidos = function(){
+                $mundialApi.getPartidos()
+                    .then(function (response) {
+                        $scope.tablaPartidos = response.data
+                    }, function(response) {
+                        console.log(response);
+                    });
+            };
+
+            $scope.getUsers = function(){
+                $mundialApi.getUsers()
+                    .then(function (response) {
+                        console.log(response.data);
+                        $scope.tablaUsuarios = response.data;
+                    }, function(response) {
+                        console.log(response);
+                    });
+            };
+
+            (function init(){
+                $scope.getPartidos();
+                $scope.getUsers()
+            })();
+
         }]
     );

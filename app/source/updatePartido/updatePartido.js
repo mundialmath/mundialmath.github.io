@@ -1,15 +1,25 @@
 'use strict';
 
-angular.module('mundialMath.startPage', ['ngRoute'])
+angular.module('mundialMath.updatePartido', ['ngRoute'])
     .config(['$routeProvider' , function($routeProvider) {
-        $routeProvider.when('/start', {
-            templateUrl: 'startPage/startPage.html'
+        $routeProvider.when('/bet', {
+            templateUrl: 'updatePartido/updatePartido.html'
         });
     }])
-    .controller('startPageCtrl', ['mundialApi', '$scope', '$timeout',
+    .controller('updatePartidoCtrl', ['mundialApi', '$scope', '$timeout',
         function($mundialApi, $scope, $timeout) {
             $scope.tablaUsuarios = null;
             $scope.tablaPartidos = null;
+
+            $scope.selectedTeam = {
+                usuario: null,
+                resultados: {
+                    1: 0,
+                    x: 0,
+                    2: 0
+                },
+                partido: null
+            };
 
             $scope.getPartidos = function(){
                 $mundialApi.getPartidos()
@@ -35,5 +45,6 @@ angular.module('mundialMath.startPage', ['ngRoute'])
                 $scope.getUsers()
             })();
 
+            $scope.enviarOdds = function() {$mundialApi.enviarOdds($scope.selectedTeam);};
         }]
     );

@@ -3,6 +3,7 @@
 
 angular.module('mundialMath', [
     'mundialMath.startPage',
+    'mundialMath.updatePartido',
     'mundialMath.resources',
     'mundialMath.directives'
 ])
