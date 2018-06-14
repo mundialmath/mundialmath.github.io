@@ -1,0 +1,1 @@
+"use strict";angular.module("mundialMath.directives").directive("dinamicTable",["$timeout",function(e){function i(e,i){}return{scope:{table:"="},link:i,templateUrl:"directives/dinamicTable/templateDinamicTable.html"}}]);
