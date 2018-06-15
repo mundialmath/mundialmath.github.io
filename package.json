@@ -22,6 +22,5 @@
     "prestart": "npm install",
     "start": "gulp"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
