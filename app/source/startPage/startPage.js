@@ -23,7 +23,6 @@ angular.module('mundialMath.startPage', ['ngRoute'])
             $scope.getUsers = function(){
                 $mundialApi.getUsers()
                     .then(function (response) {
-                        console.log(response.data);
                         $scope.tablaUsuarios = response.data;
                     }, function(response) {
                         console.log(response);

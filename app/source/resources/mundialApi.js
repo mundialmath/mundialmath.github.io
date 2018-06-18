@@ -108,7 +108,7 @@ angular.module('mundialMath.resources')
 
             actualizarResultado: function(resultado){
                 $http({
-                    url: baseUrl+'/partidos',
+                    url: baseUrl+'/partidos/'+resultado['id'],
                     method: 'POST',
                     params: resultado,
                     crossDomain: true

@@ -1,0 +1,1 @@
+angular.module("mundialMath.resources").factory("utilities",["$http",function(n){return{columnIndex:function(n,u){return n.columns.indexOf(u)}}}]);
