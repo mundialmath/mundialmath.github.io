@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mundialMath.actualizarResultados', ['ngRoute'])
+angular.module('mundialMath.actualizarResultados', ['ngRoute', 'mundialMath.resources'])
     .config(['$routeProvider' , function($routeProvider) {
         $routeProvider.when('/actualizarResultados', {
             templateUrl: 'actualizarResultados/template.html'

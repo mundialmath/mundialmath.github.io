@@ -2,7 +2,7 @@
 <div ng-controller="actualizarResultados as ctrl">
     <div>
         <select ng-model="resultadosPartido.id" ng-change="getInputsWizard()">
-            <option ng-value="a[0]" ng-repeat="a in tablaPartidos.data">{{ a[columnIndex(tablaPartidos, '1')] }} - {{ a[columnIndex(tablaPartidos, '2')] }}</option>
+            <option ng-value="a[columnIndex(tablaPartidos, 'id')]" ng-repeat="a in tablaPartidos.data">{{ a[columnIndex(tablaPartidos, '1')] }} - {{ a[columnIndex(tablaPartidos, '2')] }}</option>
         </select>
     </div>
     <div>
