@@ -12,11 +12,7 @@ angular.module('mundialMath.actualizarResultados', ['ngRoute'])
 
             $scope.resultadosPartido = {
                 id: null,
-                resultado: {
-                    1: null,
-                    x: null,
-                    2: null
-                }
+                resultado: null
             };
 
             $scope.getPartidos = function(){

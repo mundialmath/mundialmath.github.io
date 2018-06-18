@@ -86,7 +86,7 @@ angular.module('mundialMath.resources', [])
 
             actualizarPartido: function(actualizarPartido){
                 $http({
-                    url: baseUrl+'/users/'+actualizarPartido,
+                    url: baseUrl+'/partidos',
                     method: 'POST',
                     params: actualizarPartido,
                     crossDomain: true
