@@ -16,6 +16,9 @@ angular.module('mundialMath.actualizarResultados', ['ngRoute', 'mundialMath.reso
                 resultado: null
             };
 
+            $scope.checkResultados = function(){
+                return ($scope.resultadosPartido.id !== null) & ($scope.resultadosPartido.resultado !== null)
+            };
             $scope.getPartidos = function(){
                 $mundialApi.getPartidos()
                     .then(function (response) {

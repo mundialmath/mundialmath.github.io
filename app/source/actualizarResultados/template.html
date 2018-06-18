@@ -12,5 +12,8 @@
             <option ng-value="2">2</option>
         </select>
     </div>
-    <button ng-click="actualizarResultado()">Enviar </button>
+    <div>
+        <label ng-show="!checkResultados()">qlo</label>
+        <button ng-disabled="!checkResultados()" ng-click="actualizarResultado()">Enviar </button>
+    </div>
 </div>
