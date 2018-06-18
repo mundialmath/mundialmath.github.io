@@ -12,7 +12,7 @@ angular.module('mundialMath.startPage', ['ngRoute'])
             $scope.tablaPartidos = null;
 
             $scope.getPartidos = function(){
-                $mundialApi.getPartidos()
+                $mundialApi.getPartidosHistorico()
                     .then(function (response) {
                         $scope.tablaPartidos = response.data
                     }, function(response) {

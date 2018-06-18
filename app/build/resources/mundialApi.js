@@ -1,4 +1,4 @@
-angular.module('mundialMath.resources', [])
+angular.module('mundialMath.resources')
     .factory('mundialApi',  ['$http',  function($http){
         var baseUrl = 'http://127.0.0.1:5000';
         return {
@@ -55,7 +55,29 @@ angular.module('mundialMath.resources', [])
             },
             getPartidos: function(){
                 return  $http({
-                    url: baseUrl+'/partidos',
+                    url: baseUrl+'/partidos/actual',
+                    method: 'GET',
+                    withCredentials: false,
+                    crossDomain:true,
+                    eventHandlers: {
+                    }
+                });
+                // return {
+                //     columns: ['id', '1', '2'],
+                //     data: [
+                //         ['fdsaf2', "rusia", "mexico"],
+                //         ['ddfda3', 4, 5],
+                //         ['ddfda3', 4, 5],
+                //         ['ddfda3', 4, 5],
+                //         ['ddfda3', 4, 5],
+                //         ['ddfda3', 4, 5]
+                //     ]
+                // }
+            },
+
+            getPartidosHistorico: function(){
+                return  $http({
+                    url: baseUrl+'/partidos/historico',
                     method: 'GET',
                     withCredentials: false,
                     crossDomain:true,

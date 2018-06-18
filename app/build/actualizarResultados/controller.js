@@ -6,9 +6,10 @@ angular.module('mundialMath.actualizarResultados', ['ngRoute'])
             templateUrl: 'actualizarResultados/template.html'
         });
     }])
-    .controller('actualizarResultados', ['mundialApi', '$scope', '$timeout',
-        function($mundialApi, $scope, $timeout) {
+    .controller('actualizarResultados', ['mundialApi', 'utilities', '$scope', '$timeout',
+        function($mundialApi, $utilities, $scope, $timeout) {
             $scope.tablaPartidos = null;
+            $scope.columnIndex = $utilities.columnIndex;
 
             $scope.resultadosPartido = {
                 id: null,

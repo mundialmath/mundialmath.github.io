@@ -6,11 +6,12 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
             templateUrl: 'updatePartido/updatePartido.html'
         });
     }])
-    .controller('updatePartidoCtrl', ['mundialApi', '$scope', '$timeout',
-        function($mundialApi, $scope, $timeout) {
+    .controller('updatePartidoCtrl', ['mundialApi', 'utilities', '$scope', '$timeout',
+        function($mundialApi, $utilities, $scope, $timeout) {
             $scope.tablaUsuarios = null;
             $scope.tablaPartidos = null;
             $scope.tablaInputsWizard = null;
+            $scope.columnIndex = $utilities.columnIndex;
 
             $scope.selectedTeam = {
                 usuario: null,
@@ -21,8 +22,10 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
                 },
                 partido: null
             };
-            $scope.sumaResultados = function(){
-                return $scope.selectedTeam.resultados[1]+$scope.selectedTeam.resultados.x+$scope.selectedTeam.resultados[2]
+            $scope.checkResults = function(){
+                var suma1 = $scope.selectedTeam.resultados[1]+$scope.selectedTeam.resultados.x+$scope.selectedTeam.resultados[2] === 1;
+                var positivos = ($scope.selectedTeam.resultados[1] >= 0) & ($scope.selectedTeam.resultados.x >= 0) & ($scope.selectedTeam.resultados[2] >= 0);
+                return suma1 & positivos
             };
 
             $scope.getPartidos = function(){
