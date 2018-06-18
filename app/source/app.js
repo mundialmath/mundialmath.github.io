@@ -12,4 +12,11 @@ angular.module('mundialMath', [
         $locationProvider.hashPrefix('');
         $routeProvider.otherwise({redirectTo: '/start'});
     }])
+    .controller('mainControl', ['mundialApi', '$scope', '$timeout', '$location',
+        function($mundialApi, $scope, $timeout, $location) {
+            $scope.redirigir = function(pagina){
+                $location.path('/'+pagina);
+            }
+    }
+    ])
 ;

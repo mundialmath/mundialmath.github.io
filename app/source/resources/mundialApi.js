@@ -84,11 +84,11 @@ angular.module('mundialMath.resources', [])
                 })
             },
 
-            actualizarPartido: function(actualizarPartido){
+            actualizarResultado: function(resultado){
                 $http({
                     url: baseUrl+'/partidos',
                     method: 'POST',
-                    params: actualizarPartido,
+                    params: resultado,
                     crossDomain: true
                 })
             }

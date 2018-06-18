@@ -32,7 +32,7 @@ angular.module('mundialMath.startPage', ['ngRoute'])
 
             (function init(){
                 $scope.getPartidos();
-                $scope.getUsers()
+                $scope.getUsers();
             })();
 
         }]

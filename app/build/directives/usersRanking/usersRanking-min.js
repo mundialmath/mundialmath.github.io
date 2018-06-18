@@ -1,1 +1,0 @@
-"use strict";angular.module("mundialMath.directives").directive("usersRanking",["$timeout","mundialApi",function(e,i){function t(e,t){e.tablaUsuarios=i.getUsers()}return{link:t,templateUrl:"directives/usersRanking/templateUsersRanking.html"}}]);

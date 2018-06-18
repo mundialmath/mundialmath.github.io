@@ -15,6 +15,17 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
 
+    <div ng-controller="mainControl as ctrl">
+        <button ng-click="redirigir('start')">
+            Información
+        </button>
+        <button ng-click="redirigir('bet')">
+            Apostar
+        </button>
+        <button ng-click="redirigir('actualizarResultados')">
+            Actualizar resultados
+        </button>
+    </div>
     <div ng-view></div>
 
     <script src="app-min.js"></script>

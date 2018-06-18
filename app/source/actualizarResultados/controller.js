@@ -23,6 +23,12 @@ angular.module('mundialMath.actualizarResultados', ['ngRoute'])
                         console.log(response);
                     });
             };
-            $scope.actualizarPartido = function() {$mundialApi.actualizarPartido($scope.resultadosPartido);};
+            $scope.actualizarResultado = function(){
+                $mundialApi.actualizarResultado($scope.resultadosPartido);
+            };
+
+            (function init(){
+                $scope.getPartidos();
+            })();
         }]
     );
