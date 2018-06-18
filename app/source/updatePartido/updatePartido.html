@@ -22,12 +22,17 @@
                 <div class="small-9 cell">
                   <input type="number" id="1" name="input {{ a[0] }}" ng-model="selectedTeam.resultados[1]">
                 </div>
-              </div>
-            <!--<label>1</label><input type="number" name="input {{ a[0] }}" ng-model="selectedTeam.resultados[1]"><br>-->
+            </div>
+            <label>1</label><input type="number" name="input {{ a[0] }}" ng-model="selectedTeam.resultados[1]"><br>
             <label>x</label><input type="number" name="input {{ a[1] }}" ng-model="selectedTeam.resultados.x"><br>
             <label>2</label><input type="number" name="input {{ a[2] }}" ng-model="selectedTeam.resultados[2]"><br>
         </div>
-        <button ng-click="enviarOdds()">Enviar</button>
+        <div>
+            <span ng-show="sumaResultados() != 1">
+                La suma de las probabilidades es diferente de 1.
+            </span>
+            <button ng-disabled="sumaResultados() != 1" ng-click="enviarOdds()">Enviar</button>
+        </div>
     </div>
     </div>
     </form>

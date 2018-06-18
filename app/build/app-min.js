@@ -1,1 +1,1 @@
-"use strict";angular.module("mundialMath",["mundialMath.startPage","mundialMath.updatePartido","mundialMath.resources","mundialMath.directives"]).config(["$locationProvider","$routeProvider",function(a,t){a.hashPrefix(""),t.otherwise({redirectTo:"/start"})}]);
+"use strict";angular.module("mundialMath",["mundialMath.startPage","mundialMath.updatePartido","mundialMath.resources","mundialMath.directives","mundialMath.actualizarResultados"]).config(["$locationProvider","$routeProvider",function(a,t){a.hashPrefix(""),t.otherwise({redirectTo:"/start"})}]);

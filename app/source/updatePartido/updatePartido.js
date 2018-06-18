@@ -21,6 +21,9 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
                 },
                 partido: null
             };
+            $scope.sumaResultados = function(){
+                return $scope.selectedTeam.resultados[1]+$scope.selectedTeam.resultados.x+$scope.selectedTeam.resultados[2]
+            };
 
             $scope.getPartidos = function(){
                 $mundialApi.getPartidos()

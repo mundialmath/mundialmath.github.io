@@ -82,6 +82,15 @@ angular.module('mundialMath.resources', [])
                     params: odds,
                     crossDomain: true
                 })
+            },
+
+            actualizarPartido: function(actualizarPartido){
+                $http({
+                    url: baseUrl+'/users/'+actualizarPartido,
+                    method: 'POST',
+                    params: actualizarPartido,
+                    crossDomain: true
+                })
             }
         }
     }
