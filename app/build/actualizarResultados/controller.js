@@ -20,7 +20,7 @@ angular.module('mundialMath.actualizarResultados', ['ngRoute', 'mundialMath.reso
                 return ($scope.resultadosPartido.id !== null) & ($scope.resultadosPartido.resultado !== null)
             };
             $scope.getPartidos = function(){
-                $mundialApi.getPartidos()
+                $mundialApi.getPartidosHistorico()
                     .then(function (response) {
                         $scope.tablaPartidos = response.data
                     }, function(response) {
