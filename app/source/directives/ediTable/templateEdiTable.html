@@ -1,0 +1,17 @@
+
+<button ng-click="guardarCambios()">Guardar cambios</button>
+<a download="{{ tableName }}" ng-href="{{ urlTabla }}"><button>Descargar</button></a>
+<table>
+    <tr>
+        <th ng-repeat="column in table.columns">{{ column }}</th>
+    </tr>
+    <tr ng-repeat="row in table.data track by $index">
+        <td ng-repeat="col in row track by $index">
+            <input type="text" ng-model="table.data[$parent.$index][$index]" value="{{ col }}">
+        </td>
+        <td>
+            <button ng-click="deleteRow($index)">x</button>
+        </td>
+    </tr>
+</table>
+<button ng-click="addRow()">+</button>
