@@ -117,7 +117,12 @@ angular.module('mundialMath.resources')
             },
 
             guardarResultadosHistoricos: function(tabla){
-                console.log(tabla)
+                $http({
+                    url: baseUrl+'/partidos/guardar',
+                    method: 'POST',
+                    params: tabla,
+                    crossDomain: true
+                })
             }
         }
     }
