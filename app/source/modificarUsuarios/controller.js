@@ -33,6 +33,17 @@ angular.module('mundialMath.modificarUsuarios', ['ngRoute', 'mundialMath.resourc
                 $scope.urlTabla = (window.URL || window.webkitURL).createObjectURL( blob );
             }, true);
 
+            $scope.addRow = function(){
+                var row = [];
+                for (var i=0; i<$scope.tablaPartidos.columns.length; i++){
+                    row.push('')
+                }
+                $scope.tablaPartidos.data.push(row)
+            };
+
+            $scope.deleteRow = function(i){
+                $scope.tablaPartidos.data.splice(i, 1);
+            };
 
             (function init(){
                 $scope.getPartidos();

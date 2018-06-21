@@ -27,6 +27,18 @@ angular.module('mundialMath.modificarResultados', ['ngRoute', 'mundialMath.resou
                 $mundialApi.guardarResultadosHistoricos($scope.tablaPartidos);
             };
 
+            $scope.addRow = function(){
+                var row = [];
+                for (var i=0; i<$scope.tablaPartidos.columns.length; i++){
+                    row.push('')
+                }
+                $scope.tablaPartidos.data.push(row)
+            };
+
+            $scope.deleteRow = function(i){
+                $scope.tablaPartidos.data.splice(i, 1);
+            };
+
             $scope.$watch('tablaPartidos.data', function() {
                 var content = $utilities.table2str($scope.tablaPartidos);
                 var blob = new Blob([ content ], { type : 'text/plain' });
