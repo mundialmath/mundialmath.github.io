@@ -6,7 +6,9 @@ angular.module('mundialMath', [
     'mundialMath.updatePartido',
     'mundialMath.resources',
     'mundialMath.directives',
-    'mundialMath.actualizarResultados'
+    'mundialMath.actualizarResultados',
+    'mundialMath.modificarResultados',
+    'mundialMath.modificarUsuarios'
 ])
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('');

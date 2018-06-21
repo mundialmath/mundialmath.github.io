@@ -1,1 +1,1 @@
-angular.module("mundialMath.resources").factory("utilities",["$http",function(n){return{columnIndex:function(n,u){return n.columns.indexOf(u)}}}]);
+angular.module("mundialMath.resources").factory("utilities",["$http",function(n){return{columnIndex:function(n,t){return n.columns.indexOf(t)},table2str:function(n){if(null===n||void 0===n)return"";var t=n.columns.join()+"\n";for(var r in n.data)t+=n.data[r].join()+"\n";return t}}}]);

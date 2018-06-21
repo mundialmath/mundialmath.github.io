@@ -114,6 +114,10 @@ angular.module('mundialMath.resources')
                     params: resultado,
                     crossDomain: true
                 })
+            },
+
+            guardarResultadosHistoricos: function(tabla){
+                console.log(tabla)
             }
         }
     }
