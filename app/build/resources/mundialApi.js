@@ -8,7 +8,7 @@ angular.module('mundialMath.resources')
                     url: baseUrl+'/users/score',
                     method: 'GET',
                     withCredentials: false,
-                    crossDomain:true,
+                    crossDomain: true,
                     eventHandlers: {
                     }
                 });
