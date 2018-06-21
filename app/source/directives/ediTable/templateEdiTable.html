@@ -1,6 +1,5 @@
-
 <button ng-click="guardarCambios()">Guardar cambios</button>
-<a download="{{ tableName }}" ng-href="{{ urlTabla }}"><button>Descargar</button></a>
+<a download="{{ tableName+'.csv' }}" ng-href="{{ urlTabla }}"><button>Descargar</button></a>
 <table>
     <tr>
         <th ng-repeat="column in table.columns">{{ column }}</th>

@@ -1,19 +1,4 @@
 
 <div ng-controller="modificarUsuarios as ctrl">
-    <button ng-click="guardarCambios()">Guardar cambios</button>
-    <a download="users_forecast.csv" ng-href="{{ urlTabla }}"><button>Descargar</button></a>
-    <tr>
-        <th ng-repeat="column in tablaPartidos.columns">{{ column }}</th>
-    </tr>
-    <table>
-        <tr ng-repeat="row in tablaPartidos.data track by $index">
-            <td ng-repeat="col in row track by $index">
-                <input type="text" ng-model="tablaPartidos.data[$parent.$index][$index]" value="{{ col }}">
-            </td>
-            <td>
-                <button ng-click="deleteRow($index)">x</button>
-            </td>
-        </tr>
-    </table>
-    <button ng-click="addRow()">+</button>
+    <edi-table table=tablaPartidos table-name="'match'" guardar-cambios="guardarCambios()"></edi-table>
 </div>
