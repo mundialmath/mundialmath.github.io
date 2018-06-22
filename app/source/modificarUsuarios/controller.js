@@ -12,16 +12,16 @@ angular.module('mundialMath.modificarUsuarios', ['ngRoute', 'mundialMath.resourc
             $scope.tablaPartidos = null;
 
             $scope.getPartidos = function(){
-                $mundialApi.getUsers()
+                $mundialApi.getInputs('input')
                     .then(function (response) {
-                        $scope.tablaPartidos = response.data
+                        $scope.tablaPartidos = response.data;
                     }, function(response) {
                         console.log(response);
                     });
             };
 
             $scope.guardarCambios = function(){
-                $mundialApi.guardarResultadosHistoricos($scope.tablaPartidos);
+                $mundialApi.guardarResultadosUsuarios($scope.tablaPartidos);
             };
 
             (function init(){
