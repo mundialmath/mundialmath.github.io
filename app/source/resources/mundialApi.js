@@ -1,8 +1,8 @@
 angular.module('mundialMath.resources')
     .factory('mundialApi',  ['$http',  function($http){
         // var baseUrl = 'https://fierce-waters-19600.herokuapp.com';
-         var baseUrl = 'http://127.0.0.1:5000';
-//        var baseUrl = 'https://mundialmath.pythonanywhere.com';
+//         var baseUrl = 'http://127.0.0.1:5000';
+        var baseUrl = 'https://mundialmath.pythonanywhere.com';
         return {
             getUsers: function(){
                 return  $http({
