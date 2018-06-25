@@ -57,7 +57,7 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
             };
 
             (function init(){
-                $scope.getPartidosHistorico();
+                $scope.getPartidos();
                 $scope.getUsers();
                 $scope.getInputsWizard();
             })();
