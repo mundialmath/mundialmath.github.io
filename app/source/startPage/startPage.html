@@ -1,6 +1,13 @@
 
 
 <div ng-controller="startPageCtrl as ctrl">
-    <dinamic-table table=tablaUsuarios></dinamic-table>
-    <dinamic-table table=tablaPartidos></dinamic-table>
+    <br>
+    <div class="row" style="max-width: 70rem">
+        <div class="columns small-4">
+            <dinamic-table table=tablaUsuarios></dinamic-table>
+        </div>
+        <div class="columns small-8" style="overflow-y: scroll; height:425px;">
+            <dinamic-table table=tablaPartidos></dinamic-table>
+        </div>
+    </div>
 </div>
