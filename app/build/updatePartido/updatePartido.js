@@ -24,7 +24,7 @@ angular.module('mundialMath.updatePartido', ['ngRoute'])
             };
             $scope.checkResults = function(){
                 var usuario = ($scope.selectedTeam.usuario !== null) & ($scope.selectedTeam.partido !== null);
-                var suma1 = Math.abs($scope.selectedTeam.resultados[1]+$scope.selectedTeam.resultados.x+$scope.selectedTeam.resultados[2] - 1) < 0.0001 ;
+                var suma1 = Math.abs($scope.selectedTeam.resultados[1]+$scope.selectedTeam.resultados.x+$scope.selectedTeam.resultados[2] - 1) < 0.000000001 ;
                 var positivos = ($scope.selectedTeam.resultados[1] >= 0) & ($scope.selectedTeam.resultados.x >= 0) & ($scope.selectedTeam.resultados[2] >= 0);
                 return suma1 & positivos & usuario
             };
